@@ -1,0 +1,35 @@
+<?php
+
+namespace Acme\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Acme\UserBundle\Entity\ZFriend
+ *
+ * @ORM\Table(name="z_friend")
+ * @ORM\Entity
+ */
+class ZFriend
+{
+    /**
+     * @var integer $idZFriend
+     *
+     * @ORM\Column(name="id_z_friend", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idZFriend;
+
+    /**
+     * @var User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * })
+     */
+    private $user;
+
+
+}

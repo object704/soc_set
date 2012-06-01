@@ -1,0 +1,90 @@
+{% if is_granted('ROLE_STUDENT') %}
+{% extends 'UserBundle:Role_template:student.html.twig' %}
+{% endif %}
+{%block stell%}
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/first.css') }}" type="text/css" media="all" />
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/fancybox/jquery.fancybox.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/jq_start/jquery-ui-1.8.17.custom.css') }}" type="text/css"/>
+
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/user.css') }}" type="text/css" media="all" />
+
+        <script src="{{ asset('bundles/userbundle/js/jquery-1.7.1.min.js')}}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/userbundle/js/jquery-ui-1.8.17.custom.min.js')}}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/userbundle/js/jquery.bgiframe-2.1.2.js')}}" type="text/javascript"></script>
+
+        <script src="{{ asset('bundles/userbundle/js/jquery.fancybox-1.2.1.pack.js')}}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/userbundle/js/changeFoto.js')}}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/userbundle/js/j_cookie.js')}}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/userbundle/js/sendMsgJS.js')}}" type="text/javascri"></script>
+
+{%endblock%}
+
+{% block glav%}
+<h2>Профиль {{entity.firstName}} {{ entity.lastName }}</h2>
+<script>
+    $(document).ready(function() {
+        $("a.gallery").fancybox();
+        //$("#buttonFriend").button().css("width","200px");
+        $("#sendMsgBtn").button().css("width","200px");
+    });
+
+    function afterload(){
+
+        var hl = $("#foto_friends").css("height");
+        var hp = $("#info_wall").css("height");
+        var i=0;
+        var hl1="";
+        var hp1="";
+
+        while(hl[i]!='p'){
+            hl1+=hl[i]+"";
+            i++;
+        }
+
+        i=0;
+
+        while(hp[i]!='p'){
+            hp1+=hp[i]+"";
+            i++;
+        }
+        if(hp1<=hl1) $("#info_wall").css("height",hl1);
+        //else $("#info_wall").css("height",$("#foto_friends").css("height"));
+    }
+
+</script>
+
+
+
+
+
+
+<div id="foto_friends_info_wall">
+    <div id="foto_friends">
+        <div id="foto"><a class="gallery" href="{{ asset(entity.put)}}"><img src="{{ asset(entity.put) }}"></a></div>
+        <div id="sendMsg"><input type="button" value="Написать сообщение" id="sendMsgBtn"></div>
+        <div id="friendBtnDiv"><input type="button" value="" onclick="" id="buttonFriend" class="textBtn"></div>
+
+
+    </div>
+
+</div>
+
+
+
+<div id="first">
+    <p>{{ 'profile.show.firstName'|trans({}, 'FOSUserBundle') }}: {{ entity.firstName }}</p>
+    <p>{{ 'profile.show.lastName'|trans({}, 'FOSUserBundle') }}: {{ entity.lastName }}</p>
+    <p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ entity.email }} </p>
+    <p>{{ 'fos_user_profile_form_spec'|trans({}, 'FOSUserBundle') }} {{ entity.spec }} </p>
+    <p>{{ 'fos_user_profile_form_grouppa'|trans({}, 'FOSUserBundle') }} {{ entity.group }}
+
+
+</div>
+<div id="sendMsgDialog" title="Написать сообщение">
+    <input type="hidden" id="id_toInput" value="{{entity.id}}" >
+    <label>Тема сообщения:</label><br>
+    <input type="text" name="tema" id="temaInput">
+    <label>Текст сообщения:</label><br>
+    <textarea name="letter" id="letterInput" WRAP="virtual" COLS="40" ROWS="3"></textarea>
+</div>
+{%endblock%}

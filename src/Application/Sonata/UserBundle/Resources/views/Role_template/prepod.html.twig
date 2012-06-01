@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<div id="nav_g">
+    <ul>
+        {%if  path('prof')  %}
+            <li class="active"><a href="{{ path('prof') }}">Профиль</a></li>
+        {%else%}
+            <li><a href="{{ path('prof') }}">Профиль</a></li>
+        {% endif %}
+        <li><a href="#kontakt">Контакты</a></li>
+        <li><a href="">Вакансии</a></li>
+        <li><a href="">Настройки</a></li>
+    </ul>
+</div>
+
+<div id="content">
+
+    <div id="main">
+        <h2>Последняя активность</h2>
+    </div>
+
+    <div id="sections">
+        <h2>Навигация</h2>
+        <ul>
+            <li><a href=""><span>Моя страница</span></a></li>
+            <li><a href=""><span>Сообщения</span></a></li>
+            <li><a href=""><span>Группы</span></a></li>
+            <li><a href=""><span>Расписание</span></a></li>
+            <li><a href=""><span>Вебинары</span></a></li>
+        </ul>
+
+        <form id="search" action="search/" method="get">
+            <p>Поиск по сайту
+            <p><input type="text"> <button type="submit">Искать</button>
+        </form>
+    </div>
+
+    <div id="news">
+        <h2>Ближайшие события</h2>
+
+        <h3>03.04.12</h3>
+        <p>Контент. Контент. Контент. Контент. Контент. Контент.
+            Контент. Контент. Контент. Контент. Контент. Контент.
+        <h2>Расписание на день</h2>
+        <h3>03.04.12</h3>
+        <p>Календарь.Календарь.Календарь.
+            Календарь.
+            Календарь.
+
+    </div>
+
+</div>
+
+{% endblock %}

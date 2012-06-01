@@ -1,0 +1,62 @@
+{% if is_granted('ROLE_STUDENT') %}
+{% extends 'ApplicationSonataUserBundle:Role_template:student.html.twig' %}
+
+{%block stell%}
+
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/searchPeople.css') }}" type="text/css" media="all" />
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/man_card.css') }}" type="text/css" media="all" />
+
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/people.css') }}" type="text/css" media="all" />
+
+{%endblock%}
+
+{% block glav%}
+<h2>Поиск людей</h2>
+<div id="searchList">
+
+    {% for entity in entities %}
+         {%if user.id!=entity.id and entity.role=='ROLE_STUDENT'%}
+
+            <div class="main-man-div">
+                <div class="foto-man-div">
+                    <img src="{{ asset(entity.avatar) }} ">
+                </div>
+                <div class="fgs-btn-man-div">
+                    <div class="fgs-man-div">
+                        <div class="fio-man-div">
+                            <a href="{{ path('prosmotr', { 'id': entity.id }) }}">{{ entity.firstName }} {{ entity.lastName }}</a>
+                        </div>
+                        <div class="grp-man-div">
+                            {{ entity.group}}
+                        </div>
+                        <div class="status-man-div">
+                            {%if (entity.status)%}
+                            Online
+                            {%endif%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {%endif%}
+
+    {%endfor%}
+    <div id="navigation">
+        {{ entities.render()|raw }}
+    </div>
+</div>
+
+<div id="searchPanel">
+    <div id="searchForm">
+
+        <form action="{{ path('people') }}" method="post" {{ form_enctype(searchForm) }}>
+            {{ form_widget(searchForm) }}
+            <input type="submit" value="Найти" />
+        </form>
+
+    </div>
+</div>
+
+
+
+{%endblock%}
+{% endif %}

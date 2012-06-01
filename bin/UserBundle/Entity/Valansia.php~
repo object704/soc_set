@@ -1,0 +1,77 @@
+<?php
+
+namespace Acme\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Acme\UserBundle\Entity\Valansia
+ *
+ * @ORM\Table(name="valansia")
+ * @ORM\Entity
+ */
+class Valansia
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $name
+     *
+     * @ORM\Column(name="name", type="string", length=45, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var string $opisanie
+     *
+     * @ORM\Column(name="opisanie", type="string", length=45, nullable=true)
+     */
+    private $opisanie;
+
+    /**
+     * @var string $navikOpit
+     *
+     * @ORM\Column(name="navik_opit", type="string", length=45, nullable=true)
+     */
+    private $navikOpit;
+
+    /**
+     * @var datetime $timeRazmech
+     *
+     * @ORM\Column(name="time_razmech", type="datetime", nullable=true)
+     */
+    private $timeRazmech;
+
+    /**
+     * @var string $tipRab
+     *
+     * @ORM\Column(name="tip_rab", type="string", length=45, nullable=true)
+     */
+    private $tipRab;
+
+    /**
+     * @var string $obazannosti
+     *
+     * @ORM\Column(name="obazannosti", type="string", length=45, nullable=true)
+     */
+    private $obazannosti;
+
+    /**
+     * @var Compania
+     *
+     * @ORM\ManyToOne(targetEntity="Compania")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="compania_id", referencedColumnName="id")
+     * })
+     */
+    private $compania;
+
+
+}

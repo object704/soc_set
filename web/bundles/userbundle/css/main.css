@@ -1,0 +1,92 @@
+
+
+#pageHeader {
+    width:800px;
+    height:43px;
+    background:url(../img/logo2.png);
+}
+
+#linkList {
+    position:absolute;
+    top:50px;
+    left:20px;
+    width:140px;
+}                                
+    #linkList a{
+        text-decoration: none;
+        font-family: arial;
+        font-size: 13;
+        color: #607387;
+    }
+
+        #linkList a:hover{
+            /*background-color: #e1e7ed;*/
+        }
+
+            #linkList a:visited{
+                color: #607387;
+            }
+
+                #linkList div{
+                    height:20px;
+                    width:130px;
+                    padding-left: 6px;
+                }
+
+                    #linkList div:hover{
+                        background-color: #e1e7ed;
+                    }                                
+                                
+#context{
+    width:635px;
+    /*background-color:#ffffff;
+    background-repeat:repeat-y;*/
+    margin:0 0 0px 150px;
+    /*color:#454545;*/
+    display:block;
+    padding:0;
+    border: 2px solid #e9edf1;
+}
+
+.labelText{
+    font-family: arial;
+    font-size: 13;
+    color: #607387;
+}
+
+#registration{
+    width:140px;
+    margin-left: 250px;
+}
+
+#enter {
+    position:absolute;
+    top:50px;
+    left:20px;
+    width:140px;
+}
+
+#online{
+    width:635px;
+    height:30px;
+    background-color:#e9edf1;
+    background-repeat:repeat-y;
+    margin:0 0 0px 0px;
+    /*color:#454545;*/
+    display:block;padding:0;
+    
+}
+
+#user_name{
+    width: 500px;
+    /*margin-right: 420px;
+    padding-left: 15px;*/
+    font-family: Vernada,Arial;
+    font-size: 12;
+    font-weight: bold;
+    color: #607387;
+    
+    position:absolute;
+    top:50px;
+    left:170px;
+}

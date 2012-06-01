@@ -1,0 +1,73 @@
+.main-man-div{
+    width: 390px;
+    height: 58px;
+    border: 2px solid #e9edf1;
+    margin-left: 4px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    /*background-color: black;*/
+}
+.main-man-div:hover{
+    background-color: #e9edf1;
+    /*border: 2px solid #e9edf1;*/
+}
+.foto-man-div{
+    padding: 2px 0 0 0;
+    height: 50px;
+    width: 90px;
+    float:left;
+    /*background-color: red;*/
+}
+.fgs-btn-man-div{
+    height: 58px;
+    padding-left: 58px;
+
+}
+.fgs-man-div{
+    padding: 4px;
+    float: left;
+    width: 280px;
+}
+.fio-man-div{
+    margin-bottom: 2px;
+    height: 15px;
+    /*background-color: yellow;*/
+}
+.fio-man-div a{
+    font-family: Arial,Vernada;
+    font-size: 12;
+    font-weight: bold;
+    color: #607387;
+    text-decoration: none;
+}
+.fio-man-div a:hover{
+    text-decoration: underline;
+}
+.grp-man-div{
+    margin-bottom: 2px;
+    height: 15px;
+    /*background-color: gray;*/
+    font-family: Vernada,Arial;
+    font-size: 10;
+    /*font-weight: bold;*/
+    color: #607387;
+}
+.status-man-div{
+    height: 15px;
+    /*background-color: green;*/
+    font-family: Vernada,Arial;
+    font-size: 10;
+    font-weight: bold;
+    color: #AAB7C5;
+    margin-left: 220px;
+}
+.btn-man-div{
+    padding-left: 200px;
+    padding-top: 4px;
+    /*background-color: blue;*/
+}
+.btn1-man-div{
+}
+.btn2-man-div{
+    padding-top: 4px;
+}

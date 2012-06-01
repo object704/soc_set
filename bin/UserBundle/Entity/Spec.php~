@@ -1,0 +1,60 @@
+<?php
+
+namespace Acme\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Acme\UserBundle\Entity\Spec
+ *
+ * @ORM\Table(name="Spec")
+ * @ORM\Entity
+ */
+class Spec
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $name
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string $longName
+     *
+     * @ORM\Column(name="long_name", type="string", length=255, nullable=false)
+     */
+    private $longName;
+
+    /**
+     * @var string $infoSpec
+     *
+     * @ORM\Column(name="info_spec", type="string", length=255, nullable=false)
+     */
+    private $infoSpec;
+
+    /**
+     * @var string $sroc
+     *
+     * @ORM\Column(name="sroc", type="string", length=255, nullable=false)
+     */
+    private $sroc;
+
+    /**
+     * @var string $vipuskKaf
+     *
+     * @ORM\Column(name="vipusk_kaf", type="string", length=255, nullable=false)
+     */
+    private $vipuskKaf;
+
+
+}

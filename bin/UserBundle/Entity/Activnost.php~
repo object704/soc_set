@@ -1,0 +1,46 @@
+<?php
+
+namespace Acme\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Acme\UserBundle\Entity\Activnost
+ *
+ * @ORM\Table(name="Activnost")
+ * @ORM\Entity
+ */
+class Activnost
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer $idUser
+     *
+     * @ORM\Column(name="id_user", type="integer", nullable=true)
+     */
+    private $idUser;
+
+    /**
+     * @var datetime $time
+     *
+     * @ORM\Column(name="time", type="datetime", nullable=true)
+     */
+    private $time;
+
+    /**
+     * @var string $text
+     *
+     * @ORM\Column(name="text", type="string", length=45, nullable=true)
+     */
+    private $text;
+
+
+}

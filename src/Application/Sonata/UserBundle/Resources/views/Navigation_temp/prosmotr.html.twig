@@ -1,0 +1,74 @@
+{% if is_granted('ROLE_STUDENT') %}
+{% extends 'ApplicationSonataUserBundle:Role_template:student.html.twig' %}
+{% endif %}
+{%block stell%}
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/prosmotr.css') }}" type="text/css" media="all" />
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/fancybox/jquery.fancybox.css') }}" type="text/css"/>
+
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/user.css') }}" type="text/css" media="all" />
+
+
+{%endblock%}
+
+{% block glav%}
+<h2>Профиль {{entity.firstName}} {{ entity.lastName }}</h2>
+<script>
+    $(document).ready(function() {
+        $("a.gallery").fancybox();
+        //$("#buttonFriend").button().css("width","200px");
+        $("#sendMsgBtn").button().css("width","200px");
+        $("#buttonFriend").button().css("width","200px");
+    });
+
+    $(document).ready(function() {
+
+        $("#sendMsgDialog").dialog({
+            autoOpen:false,
+            closeOnEscape:true,
+            position:["center"],
+            draggable:true,
+            resizable:false,
+            modal:false
+        });
+
+        $("#sendMsgBtn").click(function(){
+            $("#sendMsgDialog").dialog("open");
+        });
+    });
+
+</script>
+
+
+
+
+
+
+<div id="foto_friends_info_wall">
+    <div id="foto_friends">
+        <div id="foto"><a class="gallery" href="{{ asset(entity.put)}}"><img src="{{ asset(entity.put) }}"></a></div>
+        <div id="sendMsg"><input type="button" value="Написать сообщение" id="sendMsgBtn"></div>
+        <div id="friendBtnDiv"><input type="button" value="Добавить в друзья" onclick="" id="buttonFriend" class="textBtn"></div>
+
+
+    </div>
+
+</div>
+
+
+
+<div id="first">
+    <p>{{ 'profile.show.firstName'|trans({}, 'FOSUserBundle') }}: {{ entity.firstName }}</p>
+    <p>{{ 'profile.show.lastName'|trans({}, 'FOSUserBundle') }}: {{ entity.lastName }}</p>
+    <p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ entity.email }} </p>
+    <p>{{ 'fos_user_profile_form_spec'|trans({}, 'FOSUserBundle') }} {{ entity.spec }} </p>
+    <p>{{ 'fos_user_profile_form_grouppa'|trans({}, 'FOSUserBundle') }} {{ entity.group }}
+
+
+</div>
+<div id="sendMsgDialog" title="Написать сообщение">
+    <form action="{{ path('prosmotr' , { 'id': entity.id })}}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <input type="submit" id="_submit2" value="Отправить" />
+    </form>
+</div>
+{%endblock%}

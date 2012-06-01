@@ -1,0 +1,46 @@
+{% if is_granted('ROLE_STUDENT') %}
+{% extends 'ApplicationSonataUserBundle:Role_template:student.html.twig' %}
+
+{%block stell%}
+
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/searchDialogs.css') }}" type="text/css" media="all" />
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/man_card.css') }}" type="text/css" media="all" />
+
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/people.css') }}" type="text/css" media="all" />
+
+{%endblock%}
+
+{% block glav%}
+<h2>Диалоги</h2>
+<div id="searchList">
+
+    {% for entity in mes_entity %}
+    <a href="{{ path('dialog_show', { 'id': entity.id }) }}">
+       <div class="main-man-div">
+        <div class="foto-man-div">
+            <img src="{{ asset(entity.avatar) }} ">
+        </div>
+        <div class="fgs-btn-man-div">
+            <div class="fgs-man-div">
+                <div class="fio-man-div">
+                    {{ entity.firstName }} {{ entity.lastName }}
+                </div>
+                <div class="grp-man-div">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </a>
+
+    {%endfor%}
+     {%if mes_entity==NULL%}
+    <div id="nothingSearched">
+        <center><br><br><br><br><br>Вам ещё никто не написал!</center>
+    </div>
+    {%endif%}
+</div>
+
+{%endblock%}
+{% endif %}

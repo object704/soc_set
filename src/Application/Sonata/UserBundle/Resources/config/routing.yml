@@ -1,0 +1,55 @@
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+
+prof:
+    pattern:  /prof
+    defaults: { _controller: ApplicationSonataUserBundle:Default:index }
+
+first_page:
+    pattern:  /first_page
+    defaults: { _controller: ApplicationSonataUserBundle:Default:first }
+
+people:
+    pattern:  /people
+    defaults: { _controller: ApplicationSonataUserBundle:People:search }
+
+prosmotr:
+    pattern:  /prosmotr/{id}
+    defaults: { _controller: ApplicationSonataUserBundle:People:prosmotr }
+
+jobs:
+    pattern:  /jobs
+    defaults: { _controller: ApplicationSonataUserBundle:Jobs:index }
+
+jobs_show:
+    pattern:  /job/{id}
+    defaults: { _controller: ApplicationSonataUserBundle:Jobs:show }
+
+compania:
+    pattern:  /compania/{id}
+    defaults: { _controller: ApplicationSonataUserBundle:Compania:show }
+
+messages:
+    pattern:  /messages_show
+    defaults: { _controller: ApplicationSonataUserBundle:Messages:show }
+
+dialog_show:
+    pattern:  /dialog_show/{id}
+    defaults: { _controller: ApplicationSonataUserBundle:Messages:showDialog }
+

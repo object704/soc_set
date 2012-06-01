@@ -1,0 +1,64 @@
+{% if is_granted('ROLE_STUDENT') %}
+{% extends 'ApplicationSonataUserBundle:Role_template:student.html.twig' %}
+
+{%block stell%}
+
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/searchPeople.css') }}" type="text/css" media="all" />
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/vakansia.css') }}" type="text/css" media="all" />
+
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/people.css') }}" type="text/css" media="all" />
+
+{%endblock%}
+
+{% block glav%}
+<script>
+    $(function() {
+        $("form input.date").datepicker({dateFormat: 'yy-mm-dd'});
+    });
+</script>
+<h2>Поиск работы</h2>
+<div id="searchList">
+    {%if rowcount!=0 %}
+    {% for entity in entities %}
+            <div class="main-man-div">
+                <div class="foto-man-div">
+                    <img src="{{ asset('bundles/userbundle/uploads/logo_com.png') }} ">
+                </div>
+                <div class="fgs-btn-man-div">
+                    <div class="fgs-man-div">
+                        <div class="fio-man-div">
+                            В компанию  <a href="{{ path('compania', { 'id': entity.compania.id }) }}">{{ entity.compania }}</a> требуется
+                        </div>
+                        <div class="grp-man-div">
+                            <a href="{{ path('jobs_show', { 'id': entity.id }) }}">{{ entity.name }}</a>
+                        </div>
+                        <div class="status-man-div">
+                            {{ entity.timeRazmech|date("Y/m/d")}}
+                        </div>
+                    </div>
+                 </div>
+            </div>
+    {%endfor%}
+
+    {%else%}
+        <div id="nothingSearched">
+                <center><br><br><br><br><br>Ничего не найдено</center>
+         </div>
+    {%endif%}
+</div>
+
+<div id="searchPanel">
+    <div id="searchForm">
+
+        <form action="{{ path('jobs') }}" method="post" {{ form_enctype(searchForm) }}>
+            {{ form_widget(searchForm) }}
+            <input type="submit" value="Найти" />
+        </form>
+
+    </div>
+</div>
+
+
+
+{%endblock%}
+{% endif %}

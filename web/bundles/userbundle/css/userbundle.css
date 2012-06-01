@@ -1,0 +1,173 @@
+/*стили кнопок регистрация и вход*/
+#menu_it {
+    position:absolute;
+    top:0; right:0;
+    margin-top:18px;
+}
+#menu_it span {
+    float:left;
+    color: white;
+    background:url(../images/b_h.png) no-repeat 0 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 7px 18px;
+    margin-right: 5px;
+}
+#menu_it a {
+    display:block;
+    float:left;
+    color: white;
+    background:url(../images/button.png) no-repeat 0 0;
+    text-align:center;
+    padding: 6px 18px;
+    margin-right: 2px;
+    height: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    width: 110px;
+    outline:none;
+    text-decoration:none;
+    text-shadow: #333 0px -1px 0px;
+}
+#menu_it a:hover {
+    color: white;
+    background:url(../images/b_h.png) no-repeat 0 0;
+}
+/*стили для картинок*/
+#img
+{
+    float: right;
+    margin: 20px 12px 0 0;
+}
+#img h2
+{
+    font-size:14px;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-align: center;
+    font-size:24px;
+    color: #4872ff;
+    text-shadow: #333 0px -1px 0px;
+}
+#g_form {
+    float: left;
+    width:40%;
+
+}
+#g_form h1 {
+    font-size:14px;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-align: center;
+    background:url(../images/heade1.png) left top repeat-x;
+    margin:7px;
+    color: white;
+    padding:5px;
+    text-shadow: #333 0px -1px 0px;
+}
+form {
+    margin-bottom:18px;
+}
+
+label,input,select,textarea{
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:13px;
+
+}
+label{
+    padding-top:6px;
+    font-size:13px;
+    line-height:18px;
+    float:left;
+    width:130px;
+    text-align:right;
+    color:#404040;
+}
+
+input[type=checkbox],input[type=radio]{
+    cursor:pointer;}
+input,textarea,select,.uneditable-input{
+    width:200px;
+    height:18px;
+    padding:4px;
+    margin:5px;
+    font-size:13px;
+    line-height:18px;
+    color:#808080;
+    border:1px solid #ccc;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+
+input[type=checkbox],input[type=radio]{
+    width:auto;
+    padding:2px;
+    margin:8px 0 10px 10px;
+    *margin-top:0;
+    line-height:normal;
+    border:none;
+
+}
+input[type=file]{
+    background-color:#ffffff;
+    padding:initial;
+    border:initial;
+    line-height:initial;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+}
+input[type=reset],input[type=submit]{
+    width:auto;
+    height:auto;
+    cursor:pointer;
+    margin-left: 150px;
+}
+select,input[type=file]{
+    height:27px;
+    *height:auto;
+    line-height:27px;
+    *margin-top:4px;
+}
+select[multiple]{
+    height:inherit;
+    background-color:#ffffff;
+}
+textarea{
+    height:auto;
+}
+.uneditable-input{
+    background-color:#ffffff;
+    display:block;
+    border-color:#eee;
+    -webkit-box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.025);
+    -moz-box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.025);
+    box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.025);
+    cursor:not-allowed;
+}
+:-moz-placeholder{
+    color:#bfbfbf;
+}
+::-webkit-input-placeholder{
+    color:#bfbfbf;
+}
+input,textarea{
+    -webkit-transition:border linear 0.2s,box-shadow linear 0.2s;
+    -moz-transition:border linear 0.2s,box-shadow linear 0.2s;
+    -ms-transition:border linear 0.2s,box-shadow linear 0.2s;
+    -o-transition:border linear 0.2s,box-shadow linear 0.2s;
+    transition:border linear 0.2s,box-shadow linear 0.2s;
+    -webkit-box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.1);}
+input:focus,textarea:focus{
+    outline:0;
+    border-color:rgba(82, 168, 236, 0.8);
+    -webkit-box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.1),0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.1),0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.1),0 0 8px rgba(82, 168, 236, 0.6);}
+input[type=file]:focus,input[type=checkbox]:focus,select:focus{
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;outline:1px dotted #666;
+}
+

@@ -1,0 +1,30 @@
+{% if is_granted('ROLE_STUDENT') %}
+{% extends 'ApplicationSonataUserBundle:Role_template:student.html.twig' %}
+{% endif %}
+{%block stell%}
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/compania.css') }}" type="text/css" media="all" />
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/fancybox/jquery.fancybox.css') }}" type="text/css"/>
+
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/user.css') }}" type="text/css" media="all" />
+
+{%endblock%}
+
+{% block glav%}
+<h2>Компания {{ entity.name }}</h2>
+
+{#{% set  avaBig  as 'userbundle/users/'.user.id.'/avaBig.jpg' %}
+{% set  foto   as userbundle/users/.user.id./foto.jpg %}#}
+
+
+<div id="logo"><img src="{{ asset('bundles/userbundle/uploads/com_big2.png') }} "></div>
+<div id="first">
+    <p>{{ entity.name}}</p>
+    <p><span>Адрес компании:</span> {{ entity.adres }}</p>
+
+    <p>Сайт: {{ entity.site }} </p>
+    <p>Телефон: {{entity.telefon }} </p>
+
+
+</div>
+<div id="sot"><h4>Сотрудники</h4> </div>
+{%endblock%}

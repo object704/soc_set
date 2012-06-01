@@ -1,0 +1,58 @@
+#listdiv{
+    width:610px;
+    height:300px;
+    margin-left: 10px;
+    margin-top:10px;
+    border:2px solid #e9edf1;
+    overflow: auto;
+}
+#letter_sendBtn{
+    width:610px;
+    height:120px;
+    border:2px solid #e9edf1;
+    background-color: #e9edf1;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-right: 0px;
+}
+.fname{
+    float:left;
+    width:60px;
+    padding: 5px;
+}
+.msg_close_theme{
+    padding-left:65px;
+    padding-top:5px;
+    
+}
+.theme_close{
+    width:500px;
+}
+.theme_msg{
+    width:500px;
+    float:left;
+    /*background-color: yellow;*/
+}
+.close{
+    padding-left: 500px;
+}
+.msg{
+    width:500px;
+    /*background-color: blue;*/
+}
+#usermsg{
+    width:495px;
+    height: 80px;
+    margin-left: 100px;
+    margin-right: 5px;
+}
+#sendMsgBtn{
+    margin-left:495px;
+    margin-right: 5px;
+    margin-top: 4px;
+    width:100px;
+}
+.msgdiv:hover{
+    background-color: #e9edf1;
+    /*border: 2px solid #e9edf1;*/
+}

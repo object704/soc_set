@@ -1,0 +1,37 @@
+{% if is_granted('ROLE_STUDENT') %}
+{% extends 'ApplicationSonataUserBundle:Role_template:student.html.twig' %}
+{% endif %}
+{%block stell%}
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/job_show.css') }}" type="text/css" media="all" />
+
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/user.css') }}" type="text/css" media="all" />
+
+
+{%endblock%}
+
+{% block glav%}
+<h2>Вакансия</h2>
+
+<div id="first">
+    <p><span>Вакансия</span></p>
+    {%if entity.name %}
+    <p> {{ entity.name }}</p>
+    {%endif%}
+    {%if entity.opisanie%}
+    <p>Описание: {{ entity.opisanie }}</p>
+    {%endif%}
+    {%if entity.navikOpit%}
+    <p>Опыт работы: {{ entity.navikOpit}} </p>
+    {%endif%}
+    {%if entity.tipRab%}
+    <p>Тип зантости: {{ entity.tipRab}} </p>
+    {%endif%}
+    {%if entity.obazannosti%}
+    <p>Обязанности: {{ entity.obazannosti}} </p>
+    {%endif%}
+    <p>Дата размещения: {{ entity.timeRazmech|date("Y/m/d") }} </p>
+
+
+</div>
+
+{%endblock%}

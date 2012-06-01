@@ -1,0 +1,26 @@
+{% if is_granted('ROLE_STUDENT') %}
+{% extends 'ApplicationSonataUserBundle:Role_template:student.html.twig' %}
+
+{%block stell%}
+
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/searchDialogs.css') }}" type="text/css" media="all" />
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/man_card.css') }}" type="text/css" media="all" />
+
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/people.css') }}" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ asset('bundles/userbundle/css/dialog.css') }}" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ asset('bundles/userbundle/css/dialogs.css') }}" type="text/css" media="all" />
+
+{%endblock%}
+
+{% block glav%}
+<h2>Диалог с {{entity.firstName}} {{entity.lastName}}</h2>
+<div id="listdiv">
+    {% for mes in messages %}
+
+    {{mes.time|date("Y/m/d")}}
+    {{mes.letter}}
+    {%endfor%}
+</div>
+
+{%endblock%}
+{% endif %}

@@ -1,0 +1,56 @@
+#status{
+    font-family: Vernada,Arial;
+    font-size: 12;
+    font-weight: bold;
+    color: #AAB7C5;
+
+    position:absolute;
+    top:50px;
+    left:730px;
+}
+
+#foto_friends{
+    float:left;
+    width:216px;
+}
+
+#info_wall{
+    padding-left:216px;
+
+}
+
+#foto{
+    padding:8px;
+    /*background-color: yellow;*/
+    
+}
+
+#changeFoto{
+    padding-left: 10px;
+    padding-right: 10px;
+    height:20px;
+}
+
+#friendBtnDiv,#sendMsg{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#foto img{
+    width: 200px;
+}
+
+#friends{
+    padding:8px;
+    /*background-color:gray;*/
+}
+#info{
+    padding:8px;
+    /*background-color:green;*/
+    /*border-left: 2px solid #e9edf1;*/
+}
+#wall{
+    /*background-color:red;*/
+    /*border-left: 2px solid #e9edf1;*/
+    padding:8px;
+}

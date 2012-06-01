@@ -1,0 +1,26 @@
+#dialogsLabel{
+    width:635px;
+    height:30px;
+    background-color:#f7f7f7;
+    background-repeat:repeat-y;
+    margin:0 0 0px 0px;
+    /*color:#454545;*/
+    display:block;padding:0;
+}
+#dialogsLabelText{
+    font-family: Vernada,Arial;
+    font-size: 12;
+    font-weight: bold;
+    color: #607387;
+    
+    position:absolute;
+    top:50px;
+    left:170px;
+}
+#dialog_list a{
+    font-family: Arial,Vernada;
+    /*font-size: 12;*/
+    /*font-weight: bold;*/
+    color: #607387;
+    text-decoration: none;
+}

@@ -1,0 +1,58 @@
+{% if is_granted('ROLE_STUDENT') %}
+{% extends 'ApplicationSonataUserBundle:Role_template:student.html.twig' %}
+{% endif %}
+{%block stell%}
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/first.css') }}" type="text/css" media="all" />
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/fancybox/jquery.fancybox.css') }}" type="text/css"/>
+
+        <link rel="stylesheet" href="{{ asset('bundles/userbundle/css/user.css') }}" type="text/css" media="all" />
+
+{%endblock%}
+
+{% block glav%}
+<h2>Ваш профиль</h2>
+<script>
+    $(document).ready(function() {
+        $("a.gallery").fancybox();
+        //$("#buttonFriend").button().css("width","200px");
+        $("#changeFotoBtn").button().css("width","200px");
+    });
+
+</script>
+
+{#{% set  avaBig  as 'userbundle/users/'.user.id.'/avaBig.jpg' %}
+{% set  foto   as userbundle/users/.user.id./foto.jpg %}#}
+
+
+
+
+<div id="foto_friends_info_wall">
+    <div id="foto_friends">
+        <div id="foto"><a class="gallery" href="{{ asset(user.put)}}"><img src="{{ asset(user.put) }}"></a></div>
+
+        <div id="changeFoto"><input type="button" class="textBtn" id="changeFotoBtn" value="Сменить фото"></div>
+
+    </div>
+
+</div>
+<div id="changeFotoDialog" title="Сменить фото">
+    <form action="{{ path('first_page') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+
+
+        <input type="submit" value="Загрузить" />
+    </form>
+</div>
+
+
+<div id="first">
+    <p>{{ 'profile.show.firstName'|trans({}, 'FOSUserBundle') }}: {{ user.firstName }}</p>
+    <p>{{ 'profile.show.lastName'|trans({}, 'FOSUserBundle') }}: {{ user.lastName }}</p>
+
+    <p>{{ 'fos_user_profile_form_spec'|trans({}, 'FOSUserBundle') }} {{ user.spec }} </p>
+    <p>{{ 'fos_user_profile_form_grouppa'|trans({}, 'FOSUserBundle') }} {{ user.group }} </p>
+
+
+</div>
+
+{%endblock%}

@@ -1,0 +1,35 @@
+#searchLabel{
+    width:635px;
+    height:30px;
+    background-color:#f7f7f7;
+    background-repeat:repeat-y;
+    margin:0 0 0px 0px;
+    /*color:#454545;*/
+    display:block;padding:0;
+}
+#searchLabelText{
+    font-family: Vernada,Arial;
+    font-size: 12;
+    font-weight: bold;
+    color: #607387;
+
+    position:absolute;
+    top:50px;
+    left:170px;
+}
+#searchList{
+    float:left;
+    width:530px;
+    background-color:white;
+}
+#searchPanel{
+    padding-left: 400px;
+
+}
+#searchForm{
+    background-color:#f7f7f7;
+    /*border: 2px solid #e9edf1;*/
+}
+#nothingSearched{
+    height:250px;
+}
